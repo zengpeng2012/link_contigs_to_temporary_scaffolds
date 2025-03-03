@@ -1,0 +1,1 @@
+chr1	sx1	sx2	chr2	sy1	sy2	color	id	x1	x2	y1	y2

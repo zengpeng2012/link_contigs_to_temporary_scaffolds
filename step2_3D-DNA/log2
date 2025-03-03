@@ -1,0 +1,6 @@
+awk: /public/home/caijing_lab/zengpeng/03.Software/HiC_assemble/3d-dna/3d-dna_z/split/overlay-edits.awk:27: (FILENAME=yahs.contigs.polished_asm.scaffold_track.txt FNR=2) fatal: division by zero attempted
+:| Warning: no explicit bundle size was listed. Will use the same one as listed for false positive size threshold: this is the most typical scenario.
+:| Warning: No input for label1 was provided. Default for label1 is ":::fragment_"
+:| Warning: No input for label2 was provided. Default for label2 is ":::debris"
+:| Warning: No input for label1 was provided. Default for label1 is ":::fragment_"
+:| Warning: No input for label2 was provided. Default for label2 is ":::debris"

@@ -1,0 +1,245 @@
+/public/home/caijing_lab/03.Software/HiC_assemble/3d-dna/3d-dna_z/run-asm-pipeline.sh -m haploid -i 10000 -r 0 yahs.contigs.fa yahs_contigs_merged_nodups.txt
+version: 180922
+ -m|--mode flag was triggered. Running in haploid mode.
+ -i|--input flag was triggered, filtering draft contigs/scaffolds smaller than 10000.
+ -r|--rounds flag was triggered, will run 0 round(s) of misjoin correction.
+###############
+Starting iterating scaffolding with editing:
+...starting round 0 of scaffolding:
+:) -p flag was triggered. Running LIGer with GNU Parallel support parameter set to true.
+:) -s flag was triggered, starting calculations with 10000 threshold starting contig/scaffold size
+:) -q flag was triggered, starting calculations with 1 threshold mapping quality
+...Using cprops file: yahs.contigs.0.cprops
+...Using merged_nodups file: yahs.contigs.mnd.0.txt
+...Scaffolding all scaffolds and contigs greater or equal to 10000 bp.
+...Starting iteration # 1
+...Starting iteration # 2
+...Starting iteration # 3
+:) DONE!
+...visualizing round 0 results:
+:) -p flag was triggered. Running with GNU Parallel support parameter set to true.
+:) -q flag was triggered, starting calculations for 1 threshold mapping quality
+:) -i flag was triggered, building mapq without
+:) -c flag was triggered, will remove temporary files after completion
+...Remapping contact data from the original contig set to assembly
+...Building track files
+...Building the hic file
+-r 5000000,2500000,1000000,500000,100000,25000,10000,5000,1000
+1
+temp.yahs.contigs.0.asm_mnd.txt
+Not including fragment map
+Start preprocess
+Writing header
+Writing body
+..
+Writing footer
+
+Finished preprocess
+HiC file version: 8
+
+Calculating norms for zoom BP_5000000
+Calculating norms for zoom BP_2500000
+Calculating norms for zoom BP_1000000
+Calculating norms for zoom BP_500000
+Calculating norms for zoom BP_100000
+Calculating norms for zoom BP_25000
+Calculating norms for zoom BP_10000
+Calculating norms for zoom BP_5000
+Calculating norms for zoom BP_1000
+Writing expected
+Writing norms
+Finished writing norms
+###############
+Starting polish:
+:) -p flag was triggered. Running with GNU Parallel support parameter set to true.
+:) -q flag was triggered, performing polishing taking into account signal with minimum 1 mapping quality
+...-j flag was triggered, will use Juicebox map yahs.contigs.resolved.hic
+...-a flag was triggered, will use scaffold annotation file yahs.contigs.resolved_asm.scaffold_track.txt
+...-b flag was triggered, will use superscaffold annotation file yahs.contigs.resolved_asm.superscaf_track.txt
+...-s flag was triggered, will ignore all scaffolds shorter than 1000000 for polishing
+:) -c flag was triggered, starting calculations with 5% saturation level
+:) -w flag was triggered, performing cursory search for mismatches at 100000 resolution
+:) -d flag was triggered, depletion score will be averaged across a region bounded by 3000000 superdiagonal
+:) -k flag was triggered, starting calculations with 55% depletion as mismatch threshold
+:) -n flag was triggered, performing mismatch region thinning at 1000 resolution
+:) -p flag was triggered. Running with GNU Parallel support parameter set to true.
+:) -c flag was triggered, starting calculations with 5% saturation level
+:) -w flag was triggered, performing cursory search for mismatches at 100000 resolution
+:) -k flag was triggered, starting calculations with 55% depletion as mismatch threshold
+:) -d flag was triggered, depletion score will be averaged across a region bounded by 3000000 superdiagonal
+:) -n flag was triggered, performing mismatch region thinning at 1000 resolution
+...Dumping 100000 resolution matrix
+HiC file version: 8
+...Estimating necessary saturation level for requested misassembly sensitivity
+...Coarse resolution saturation level = 4.59013
+...Analyzing near-diagonal mismatches
+...Filtering mismatch calls without better alternative: Not functional yet, skipping
+...Thinning mismatch region boundaries.
+...Dumping 1000 resolution matrix
+HiC file version: 8
+...Estimating necessary saturation level for requested misassembly sensitivity
+...Fine resolution saturation level = 2.1
+...Analyzing near-diagonal mismatches
+...-p flag was triggered. Running with GNU Parallel support parameter set to true.
+...-r flag was triggered, output will be labeled as *.polish.*
+...applying edits to cprops file
+...applying edits to mnd file
+:) -p flag was triggered. Running LIGer with GNU Parallel support parameter set to true.
+:) -q flag was triggered, starting calculations with 1 threshold mapping quality
+:) -s flag was triggered, starting calculations with 1000000 threshold starting contig/scaffold size
+...Using cprops file: yahs.contigs.resolved.polish.cprops
+...Using merged_nodups file: yahs.contigs.resolved.polish.mnd.txt
+...Explicit scaffold set has been listed as input. Using set as a first iteration.
+...Starting iteration # 1
+:) DONE!
+:) -p flag was triggered. Running LIGer with GNU Parallel support parameter set to true.
+:) -q flag was triggered, starting calculations with 1 threshold mapping quality
+:) -s flag was triggered, starting calculations with 1000000 threshold starting contig/scaffold size
+...Using cprops file: yahs.contigs.resolved.polish.cprops
+...Using merged_nodups file: yahs.contigs.resolved.polish.mnd.txt
+...Explicit scaffold set has been listed as input. Using set as a first iteration.
+...Starting iteration # 1
+...Starting iteration # 2
+:) DONE!
+:) -p flag was triggered. Running with GNU Parallel support parameter set to true.
+:) -q flag was triggered, starting calculations for 1 threshold mapping quality
+:) -i flag was triggered, building mapq without
+:) -c flag was triggered, will remove temporary files after completion
+...Remapping contact data from the original contig set to assembly
+...Building track files
+...Building the hic file
+-r 5000000,2500000,1000000,500000,100000,25000,10000,5000,1000
+1
+temp.yahs.contigs.resolved.polish.asm_mnd.txt
+Not including fragment map
+Start preprocess
+Writing header
+Writing body
+..
+Writing footer
+
+Finished preprocess
+HiC file version: 8
+
+Calculating norms for zoom BP_5000000
+Calculating norms for zoom BP_2500000
+Calculating norms for zoom BP_1000000
+Calculating norms for zoom BP_500000
+Calculating norms for zoom BP_100000
+Calculating norms for zoom BP_25000
+Calculating norms for zoom BP_10000
+Calculating norms for zoom BP_5000
+Calculating norms for zoom BP_1000
+Writing expected
+Writing norms
+Finished writing norms
+###############
+Starting split:
+:) -p flag was triggered. Running with GNU Parallel support parameter set to true.
+...-q flag was triggered, will ignore all reads with mapping quality less then 1 for polishing
+...-j flag was triggered, will use Juicebox map yahs.contigs.polished.hic
+...-a flag was triggered, will use scaffold annotation file yahs.contigs.polished_asm.scaffold_track.txt
+...-b flag was triggered, will use superscaffold annotation file yahs.contigs.polished_asm.superscaf_track.txt
+...-s flag was triggered, will ignore all scaffolds shorter than 100000 for polishing
+:) -c flag was triggered, starting calculations with 5% saturation level
+:) -w flag was triggered, performing cursory search for mismatches at 100000 resolution
+:) -d flag was triggered, depletion score will be averaged across a region bounded by 3000000 superdiagonal
+:) -k flag was triggered, starting calculations with 55% depletion as mismatch threshold
+:) -n flag was triggered, performing mismatch region thinning at 1000 resolution
+:) -p flag was triggered. Running with GNU Parallel support parameter set to true.
+:) -c flag was triggered, starting calculations with 5% saturation level
+:) -w flag was triggered, performing cursory search for mismatches at 100000 resolution
+:) -k flag was triggered, starting calculations with 55% depletion as mismatch threshold
+:) -d flag was triggered, depletion score will be averaged across a region bounded by 3000000 superdiagonal
+:) -n flag was triggered, performing mismatch region thinning at 1000 resolution
+...Dumping 100000 resolution matrix
+HiC file version: 8
+...Estimating necessary saturation level for requested misassembly sensitivity
+...Coarse resolution saturation level = 4.13544
+...Analyzing near-diagonal mismatches
+...Filtering mismatch calls without better alternative: Not functional yet, skipping
+...Thinning mismatch region boundaries.
+...Dumping 1000 resolution matrix
+HiC file version: 8
+...Estimating necessary saturation level for requested misassembly sensitivity
+...Fine resolution saturation level = 2.1
+...Analyzing near-diagonal mismatches
+...-p flag was triggered. Running with GNU Parallel support parameter set to true.
+...-r flag was triggered, output will be labeled as *.split.*
+...applying edits to cprops file
+...applying edits to mnd file
+:) -p flag was triggered. Running with GNU Parallel support parameter set to true.
+:) -q flag was triggered, starting calculations for 1 threshold mapping quality
+:) -i flag was triggered, building mapq without
+:) -c flag was triggered, will remove temporary files after completion
+...Remapping contact data from the original contig set to assembly
+...Building track files
+...Building the hic file
+-r 5000000,2500000,1000000,500000,100000,25000,10000,5000,1000
+1
+temp.yahs.contigs.polished.split.asm_mnd.txt
+Not including fragment map
+Start preprocess
+Writing header
+Writing body
+..
+Writing footer
+
+Finished preprocess
+HiC file version: 8
+
+Calculating norms for zoom BP_5000000
+Calculating norms for zoom BP_2500000
+Calculating norms for zoom BP_1000000
+Calculating norms for zoom BP_500000
+Calculating norms for zoom BP_100000
+Calculating norms for zoom BP_25000
+Calculating norms for zoom BP_10000
+Calculating norms for zoom BP_5000
+Calculating norms for zoom BP_1000
+Writing expected
+Writing norms
+Finished writing norms
+###############
+Starting sealing:
+... -i flag was triggered, will attempt to place back only debris contigs/scaffolds and those less than 10000
+:) -p flag was triggered. Running with GNU Parallel support parameter set to true.
+:) -q flag was triggered, starting calculations for 1 threshold mapping quality
+:) -i flag was triggered, building mapq without
+:) -c flag was triggered, will remove temporary files after completion
+...Remapping contact data from the original contig set to assembly
+...Building track files
+...Building the hic file
+-r 5000000,2500000,1000000,500000,100000,25000,10000,5000,1000
+1
+temp.yahs.contigs.rawchrom.asm_mnd.txt
+Not including fragment map
+Start preprocess
+Writing header
+Writing body
+..
+Writing footer
+
+Finished preprocess
+HiC file version: 8
+
+Calculating norms for zoom BP_5000000
+Calculating norms for zoom BP_2500000
+Calculating norms for zoom BP_1000000
+Calculating norms for zoom BP_500000
+Calculating norms for zoom BP_100000
+Calculating norms for zoom BP_25000
+Calculating norms for zoom BP_10000
+Calculating norms for zoom BP_5000
+Calculating norms for zoom BP_1000
+Writing expected
+Writing norms
+Finished writing norms
+###############
+Finilizing output:
+... -s flag was triggered, treating all contigs/scaffolds shorter than 10000 as unattempted.
+... -l flag was triggered. Output will appear with headers of the form yahs.contigs_hic_scaffold_#.
+... -g flag was triggered, making gap size between scaffolded draft sequences to be equal to 500.
+Analyzing the merged assembly
+...trimming N overhangs
+...adding gaps

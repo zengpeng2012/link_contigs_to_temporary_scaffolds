@@ -1,0 +1,12 @@
+tempsca_0001	1	2540652	1	W	yahs_1	1	2540652	-
+tempsca_0001	2540653	2541152	2	N	500	scaffold	yes	paired-ends
+tempsca_0001	2541153	4535307	3	W	yahs_4	1	1994155	+
+tempsca_0001	4535308	4535807	4	N	500	scaffold	yes	paired-ends
+tempsca_0001	4535808	6846374	5	W	yahs_2	1	2310567	+
+tempsca_0001	6846375	6846874	6	N	500	scaffold	yes	paired-ends
+tempsca_0001	6846875	8707144	7	W	yahs_5	1	1860270	+
+tempsca_0001	8707145	8707644	8	N	500	scaffold	yes	paired-ends
+tempsca_0001	8707645	10790710	9	W	yahs_3	1	2083066	-
+tempsca_0002	1	77000	1	W	yahs_6	1	77000	+
+tempsca_0003	1	57000	1	W	yahs_7	1	57000	+
+tempsca_0004	1	1000	1	W	yahs_8	1	1000	+
